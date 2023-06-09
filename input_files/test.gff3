@@ -1,0 +1,30 @@
+# small subset of the actual file for testing, 4 false and 1 valid cases
+
+FN668638.1	Liftoff	gene	22910	24297	.	-	.	ID=BWZXIU_5397_gene;score=0.0;note=gene_derived from CDS;coverage=1.0;sequence_ID=1.0;matches_ref_protein=True;valid_ORF=False;missing_start_codon=True;valid_ORFs=0;extra_copy_number=0;copy_num_ID=BWZXIU_5397_gene_0
+FN668638.1	Liftoff	CDS	22910	23798	.	-	.	ID=Seq_1_Seq_1_Manual_BLAST7C_06517.mRNA.1:CDS:1;score=0.0;note=nan;Parent=BWZXIU_5397_gene;extra_copy_number=0
+FN668638.1	Liftoff	CDS	23833	23948	.	-	.	ID=Seq_1_Seq_1_Manual_BLAST7C_06517.mRNA.1:CDS:1;score=0.0;note=nan;Parent=BWZXIU_5397_gene;extra_copy_number=0
+FN668638.1	Liftoff	CDS	23980	24051	.	-	.	ID=Seq_1_Seq_1_Manual_BLAST7C_06517.mRNA.1:CDS:1;score=0.0;note=nan;Parent=BWZXIU_5397_gene;extra_copy_number=0
+FN668638.1	Liftoff	CDS	24084	24221	.	-	.	ID=Seq_1_Seq_1_Manual_BLAST7C_06517.mRNA.1:CDS:1;score=0.0;note=nan;Parent=BWZXIU_5397_gene;extra_copy_number=0
+FN668638.1	Liftoff	CDS	24254	24297	.	-	.	ID=Seq_1_Seq_1_Manual_BLAST7C_06517.mRNA.1:CDS:1;score=0.0;note=nan;Parent=BWZXIU_5397_gene;extra_copy_number=0
+
+FN668638.1	Liftoff	gene	24718	26276	.	-	.	ID=ADJSJN_5714_gene;score=0.0;note=gene_derived from CDS;coverage=1.0;sequence_ID=1.0;matches_ref_protein=True;valid_ORF=False;missing_start_codon=True;valid_ORFs=0;extra_copy_number=0;copy_num_ID=ADJSJN_5714_gene_0
+FN668638.1	Liftoff	CDS	24718	24891	.	-	.	ID=Seq_1_Seq_1_Manual_BLAST7C_05959.mRNA.1:CDS:1;score=0.0;note=nan;Parent=ADJSJN_5714_gene;extra_copy_number=0
+FN668638.1	Liftoff	CDS	24922	25105	.	-	.	ID=Seq_1_Seq_1_Manual_BLAST7C_05959.mRNA.1:CDS:1;score=0.0;note=nan;Parent=ADJSJN_5714_gene;extra_copy_number=0
+FN668638.1	Liftoff	CDS	25139	25220	.	-	.	ID=Seq_1_Seq_1_Manual_BLAST7C_05959.mRNA.1:CDS:1;score=0.0;note=nan;Parent=ADJSJN_5714_gene;extra_copy_number=0
+FN668638.1	Liftoff	CDS	25253	25757	.	-	.	ID=Seq_1_Seq_1_Manual_BLAST7C_05959.mRNA.1:CDS:1;score=0.0;note=nan;Parent=ADJSJN_5714_gene;extra_copy_number=0
+FN668638.1	Liftoff	CDS	25790	26276	.	-	.	ID=Seq_1_Seq_1_Manual_BLAST7C_05959.mRNA.1:CDS:1;score=0.0;note=nan;Parent=ADJSJN_5714_gene;extra_copy_number=0
+
+FN668638.1	Liftoff	gene	28252	28773	.	-	.	ID=NMFSGF_5596_gene;score=0.0;note=gene_derived from CDS;coverage=1.0;sequence_ID=1.0;matches_ref_protein=True;valid_ORF=False;missing_start_codon=True;valid_ORFs=0;extra_copy_number=0;copy_num_ID=NMFSGF_5596_gene_0
+FN668638.1	Liftoff	CDS	28252	28370	.	-	.	ID=Seq_1_Seq_1_Manual_BLAST7C_06627.mRNA.1:CDS:1;score=0.0;note=nan;Parent=NMFSGF_5596_gene;extra_copy_number=0
+FN668638.1	Liftoff	CDS	28401	28559	.	-	.	ID=Seq_1_Seq_1_Manual_BLAST7C_06627.mRNA.1:CDS:1;score=0.0;note=nan;Parent=NMFSGF_5596_gene;extra_copy_number=0
+FN668638.1	Liftoff	CDS	28593	28678	.	-	.	ID=Seq_1_Seq_1_Manual_BLAST7C_06627.mRNA.1:CDS:1;score=0.0;note=nan;Parent=NMFSGF_5596_gene;extra_copy_number=0
+FN668638.1	Liftoff	CDS	28708	28773	.	-	.	ID=Seq_1_Seq_1_Manual_BLAST7C_06627.mRNA.1:CDS:1;score=0.0;note=nan;Parent=NMFSGF_5596_gene;extra_copy_number=0
+
+FN668638.1	Liftoff	gene	29009	30868	.	-	.	ID=PCCMAD_5021_gene;score=0.0;note=gene_derived from CDS;coverage=1.0;sequence_ID=1.0;matches_ref_protein=True;valid_ORF=False;missing_start_codon=True;valid_ORFs=0;extra_copy_number=0;copy_num_ID=PCCMAD_5021_gene_0
+FN668638.1	Liftoff	CDS	29009	29226	.	-	.	ID=Seq_1_Seq_1_Manual.BLAST7C_06121.mRNA.1:CDS:1;score=0.0;note=nan;Parent=PCCMAD_5021_gene;extra_copy_number=0
+FN668638.1	Liftoff	CDS	29259	29364	.	-	.	ID=Seq_1_Seq_1_Manual.BLAST7C_06121.mRNA.1:CDS:1;score=0.0;note=nan;Parent=PCCMAD_5021_gene;extra_copy_number=0
+FN668638.1	Liftoff	CDS	29398	30788	.	-	.	ID=Seq_1_Seq_1_Manual.BLAST7C_06121.mRNA.1:CDS:1;score=0.0;note=nan;Parent=PCCMAD_5021_gene;extra_copy_number=0
+FN668638.1	Liftoff	CDS	30819	30868	.	-	.	ID=Seq_1_Seq_1_Manual.BLAST7C_06121.mRNA.1:CDS:1;score=0.0;note=nan;Parent=PCCMAD_5021_gene;extra_copy_number=0
+
+FN668638.1	Liftoff	gene	32865	33920	.	-	.	ID=XKDASR_4985_gene;score=0.0;note=gene_derived from CDS;coverage=1.0;sequence_ID=1.0;matches_ref_protein=True;valid_ORF=True;valid_ORFs=1;extra_copy_number=0;copy_num_ID=XKDASR_4985_gene_0
+FN668638.1	Liftoff	CDS	32865	33920	.	-	.	ID=Seq_1_Seq_1_Manual.BlastoST7C_2022:061312:41:07;score=0.0;note=nan;Parent=XKDASR_4985_gene;extra_copy_number=0

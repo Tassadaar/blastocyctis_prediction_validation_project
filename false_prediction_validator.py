@@ -11,7 +11,7 @@ def main():
     parser.add_argument("-f", "--fasta_file", type=str, required=True, help="Input path for genome assembly in fasta")
     parser.add_argument("-p", "--prediction", type=str, required=True, help="Input path for predictions in gff3")
     parser.add_argument("-o", "--output", type=str, required=True, help="Input name for the output file")
-    parser.add_argument("-m", "--mode", type=str, default="all")
+    parser.add_argument("-m", "--mode", type=str, default="all", help="Output all features or a list of genes")
 
     args = parser.parse_args()
 

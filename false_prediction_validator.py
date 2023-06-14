@@ -32,32 +32,30 @@ def main():
             valid_orf = gene.attributes["valid_ORF"]  # for some reason this returns a list with a single item
             missing_start_codon = gene.attributes["missing_start_codon"]
 
-            if valid_orf[0] == "False":
+            if valid_orf[0] == "False" and missing_start_codon[0] == "True":
 
-                if missing_start_codon[0] == "True":
+                if gene.strand == "+":
+                    search_start = int(gene.end)
+                    search_end = search_start + 15
+                    motif_range = get_seq(fasta, gene.seqid, search_start, search_end)
 
-                    if gene.strand == "+":
-                        search_start = int(gene.end)
-                        search_end = search_start + 15
-                        motif_range = get_seq(fasta, gene.seqid, search_start, search_end)
+                    if re.search(r"T[ACTG]{4}TGTTTGTT", motif_range):  # check if the motif exists
+                        gene.attributes["motif"] = "True"
+                        motif_counter += 1
+                    else:
+                        gene.attributes["motif"] = "False"
 
-                        if re.search(r"T[ACTG]{2}[ACTG]{2}TGTTTGTT", motif_range):  # check if the motif exists
-                            gene.attributes["motif"] = "True"
-                            motif_counter += 1
-                        else:
-                            gene.attributes["motif"] = "False"
+                elif gene.strand == "-":
+                    search_end = int(gene.start)
+                    search_start = search_end - 15
+                    motif_range = get_seq(fasta, gene.seqid, search_start, search_end)
 
-                    elif gene.strand == "-":
-                        search_end = int(gene.start)
-                        search_start = search_end - 15
-                        motif_range = get_seq(fasta, gene.seqid, search_start, search_end)
-
-                        if re.search(r"AACAAACA[ACTG]{2}[ACTG]{2}A", motif_range):  # check if the motif exists
-                            gene.attributes["motif"] = ["True"]
-                            motif_counter += 1
-                        else:
-                            gene.attributes["motif"] = ["False"]
-
+                    if re.search(r"AACAAACA[ACTG]{4}A", motif_range):  # check if the motif exists
+                        gene.attributes["motif"] = ["True"]
+                        motif_counter += 1
+                    else:
+                        gene.attributes["motif"] = ["False"]
+                    
             out.write(f"\n{str(gene)}\n")
             for child in db.children(gene, order_by="start"):
                 out.write(f"{str(child)}\n")

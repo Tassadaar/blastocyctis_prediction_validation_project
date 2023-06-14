@@ -9,6 +9,7 @@ def main():
 
     parser.add_argument("-f", "--fasta_file", type=str, required=True, help="Input path for genome assembly in fasta")
     parser.add_argument("-p", "--prediction", type=str, required=True, help="Input path for predictions in gff3")
+    parser.add_argument("-o", "--output", type=str, required=True, help="Input name for the output file")
 
     args = parser.parse_args()
 
@@ -18,7 +19,7 @@ def main():
     db = gffutils.create_db(args.prediction, dbfn=":memory:", id_spec=id_func)
     # counter for number of motifs found
     motif_counter = 0
-    output = "test.gff3"
+    output = args.output
 
     with open(output, "w") as out:
         for gene in db.features_of_type("gene"):
@@ -55,7 +56,7 @@ def main():
                         motif_counter += 1
                     else:
                         gene.attributes["motif"] = ["False"]
-                    
+
             out.write(f"\n{str(gene)}\n")
             for child in db.children(gene, order_by="start"):
                 out.write(f"{str(child)}\n")

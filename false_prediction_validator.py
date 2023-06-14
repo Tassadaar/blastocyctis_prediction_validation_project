@@ -65,6 +65,9 @@ def main():
     prepend_to_file(output, f"# There were {motif_counter} transferred predictions with the motif found")
 
 
+# written by Joran(novigit)
+# this function creates a custom ID for each CDS feature, using the ID, the start and end coordinates to
+# make sure it is unique
 def id_func(x):
     new_id = None
 
@@ -76,6 +79,7 @@ def id_func(x):
     return new_id
 
 
+# this function extracts genomic sequence for motif search
 def get_seq(fasta, contig_id, start, end):
     contig_seq = fasta[contig_id].seq.upper()
     motif_range = str(contig_seq[start - 1:end - 1])  # python slicing is 0-based
@@ -83,6 +87,7 @@ def get_seq(fasta, contig_id, start, end):
     return motif_range
 
 
+# this function adds a report as a comment to the beginning of the new gff3 files
 def prepend_to_file(file_path, text):
     with open(file_path, 'r') as f:
         old_content = f.read()

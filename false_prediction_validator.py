@@ -1,4 +1,5 @@
 import argparse
+import sys
 import re
 import gffutils
 from Bio import SeqIO
@@ -10,6 +11,7 @@ def main():
     parser.add_argument("-f", "--fasta_file", type=str, required=True, help="Input path for genome assembly in fasta")
     parser.add_argument("-p", "--prediction", type=str, required=True, help="Input path for predictions in gff3")
     parser.add_argument("-o", "--output", type=str, required=True, help="Input name for the output file")
+    parser.add_argument("-m", "--mode", type=str, default="all")
 
     args = parser.parse_args()
 
@@ -17,6 +19,14 @@ def main():
     fasta = SeqIO.index(args.fasta_file, "fasta")
     # parse gff3 file and store in a sqlite3 database
     db = gffutils.create_db(args.prediction, dbfn=":memory:", id_spec=id_func)
+    # mode flag validation
+    mode = args.mode
+    try:
+        if mode not in ["all", "list"]:
+            raise ValueError("Invalid mode type, make sure to check the list of valid modes and spelling!")
+    except ValueError as e:
+        print(f"Error: {e}")
+        sys.exit()
     # counter for number of motifs found
     motif_counter = 0
     output = args.output
@@ -25,9 +35,10 @@ def main():
         for gene in db.features_of_type("gene"):
             # validation
             if "missing_stop_codon" not in gene.attributes:
-                out.write(f"\n{str(gene)}\n")
-                for child in db.children(gene, order_by="start"):
-                    out.write(f"{str(child)}\n")
+                if mode == "all":
+                    out.write(f"\n{str(gene)}\n")
+                    for child in db.children(gene, order_by="start"):
+                        out.write(f"{str(child)}\n")
                 continue
 
             missing_stop_codon = gene.attributes["missing_stop_codon"]
@@ -57,8 +68,9 @@ def main():
                         gene.attributes["motif"] = ["False"]
 
             out.write(f"\n{str(gene)}\n")
-            for child in db.children(gene, order_by="start"):
-                out.write(f"{str(child)}\n")
+            if mode == "all":
+                for child in db.children(gene, order_by="start"):
+                    out.write(f"{str(child)}\n")
 
     # status report
     prepend_to_file(output, f"# There were {motif_counter} transferred predictions with the motif found")
